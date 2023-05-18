@@ -25,13 +25,12 @@ export type TodolistType = {
     title: string
     filter: filterValuesType
 }
-type TasksStateType = {
+export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
 
 
 function App() {
-
     let todolistID1 = v1();
     let todolistID2 = v1();
 
