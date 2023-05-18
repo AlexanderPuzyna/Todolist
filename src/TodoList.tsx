@@ -80,7 +80,6 @@ const TodoList = (props: TodoListPropsType) => {
                         props.changeTaskTite(t.id, newValue, props.id)
                     }
 
-
                     return (
                         <li key={t.id} className={t.isDone ? 'is-done' : ''}>
                             <Checkbox

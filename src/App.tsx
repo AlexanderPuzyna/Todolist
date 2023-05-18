@@ -30,19 +30,14 @@ export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
 
-
 function App() {
-
     let todolistID1 = v1();
     let todolistID2 = v1();
 
-
-    let [todolists, setTodolists] = useState<Array<TodolistType>>(
-        [
+    let [todolists, setTodolists] = useState<Array<TodolistType>>([
             {id: todolistID1, title: "What to learn", filter: 'active'},
             {id: todolistID2, title: "What to buy", filter: 'completed'}
-        ]
-    )
+        ])
     let [tasks, setTasks] = useState<TasksStateType>({
         [todolistID1]: [
             {id: v1(), title: "HTML & CSS", isDone: true},
@@ -127,7 +122,6 @@ function App() {
 
     }
 
-
     return (
         <div className="App">
             <AppBar position="static">
@@ -177,7 +171,6 @@ function App() {
                             filter={tl.filter}
                             removeTodoloist={removeTodolist}
                             changeTodolistTitle={changeTodolistTitle}
-
                         />
                             </Paper>
                         </Grid>
