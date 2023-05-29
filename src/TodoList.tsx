@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from 'react'
-import {filterValuesType, TaskType} from "./App";
+import {FilterValuesType, TaskType} from "./App";
 import AddItemForm from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import Button from '@mui/material/Button';
@@ -13,11 +13,11 @@ type TodoListPropsType = {
     title: string
     tasks: Array<TaskType>
     removeTask: (taskId: string, todolistId: string) => void
-    changeFilter: (value: filterValuesType, todolistId: string) => void
+    changeFilter: (value: FilterValuesType, todolistId: string) => void
     addTask: (title: string, todolistId: string) => void
     changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void
     changeTaskTite: (id: string, newTitle: string,todolistId: string) => void
-    filter: filterValuesType
+    filter: FilterValuesType
     removeTodoloist: (todolistId: string) => void
     changeTodolistTitle: (id: string, newTitle: string) => void
 

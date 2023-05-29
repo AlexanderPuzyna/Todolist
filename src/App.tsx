@@ -13,7 +13,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-export type filterValuesType = "all" | "active" | "completed";
+export type FilterValuesType = "all" | "active" | "completed";
 
 export type TaskType = {
     id: string
@@ -23,9 +23,8 @@ export type TaskType = {
 export type TodolistType = {
     id: string
     title: string
-    filter: filterValuesType
+    filter: FilterValuesType
 }
-
 export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
@@ -98,11 +97,9 @@ function App() {
 
     }
 
+    let [filter, setFilter] = useState<FilterValuesType>("all");
 
-
-    let [filter, setFilter] = useState<filterValuesType>("all");
-
-    function changeFilter(value: filterValuesType, todolistId: string) {
+    function changeFilter(value: FilterValuesType, todolistId: string) {
         let todolist = todolists.find(tl => tl.id === todolistId);
         if (todolist) {
             todolist.filter = value;
@@ -110,16 +107,11 @@ function App() {
         }
     }
 
-
-
-
-
     function addTodolist(title: string) {
         let newTodolistId = v1();
         let newTodolist: TodolistType = {id: newTodolistId, title: title, filter: "all"}
         setTodolists([newTodolist, ...todolists]);
         setTasks({...tasks, [newTodolistId]: []})
-
     }
 
     return (
